@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Python实现自动抠图（下篇） | 王的忧伤</title>
+    <meta name="generator" content="VuePress 1.9.7">
+    <link rel="icon" href="/logo.png">
+    <meta name="description" content="Vuepress blog">
+    
+    <link rel="preload" href="/assets/css/0.styles.023b3910.css" as="style"><link rel="preload" href="/assets/js/app.268a872f.js" as="script"><link rel="preload" href="/assets/js/2.bf12f96b.js" as="script"><link rel="preload" href="/assets/js/8.ab950238.js" as="script"><link rel="prefetch" href="/assets/js/3.1e97dab3.js"><link rel="prefetch" href="/assets/js/4.b7d0708f.js"><link rel="prefetch" href="/assets/js/5.9e2f4ca7.js"><link rel="prefetch" href="/assets/js/6.c7b54f12.js"><link rel="prefetch" href="/assets/js/7.651439ec.js"><link rel="prefetch" href="/assets/js/9.f83110cf.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.023b3910.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><!----> <span class="site-name">王的忧伤</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/" class="nav-link">
+  Home
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Blog" class="dropdown-title"><span class="title">Blog</span> <span class="arrow down"></span></button> <button type="button" aria-label="Blog" class="mobile-dropdown-title"><span class="title">Blog</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/Blog/Python实现自动抠图（上篇）.html" class="nav-link">
+  Python
+</a></li></ul></div></div> <a href="https://github.com/iGao101" target="_blank" rel="noopener noreferrer" class="repo-link">
+    GitHub
+    <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/" class="nav-link">
+  Home
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Blog" class="dropdown-title"><span class="title">Blog</span> <span class="arrow down"></span></button> <button type="button" aria-label="Blog" class="mobile-dropdown-title"><span class="title">Blog</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/Blog/Python实现自动抠图（上篇）.html" class="nav-link">
+  Python
+</a></li></ul></div></div> <a href="https://github.com/iGao101" target="_blank" rel="noopener noreferrer" class="repo-link">
+    GitHub
+    <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></nav>  <ul class="sidebar-links"><li><a href="/Blog/Python实现自动抠图（上篇）.html" class="sidebar-link">Python实现自动抠图（上篇）</a></li><li><a href="/Blog/Python实现自动抠图（下篇）.html" class="active sidebar-link">Python实现自动抠图（下篇）</a></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="python实现自动抠图-下篇"><a href="#python实现自动抠图-下篇" class="header-anchor">#</a> Python实现自动抠图（下篇）</h1> <p>我们<a href="https://blog.csdn.net/weixin_40840714/article/details/97102224" target="_blank" rel="noopener noreferrer"><strong>上篇</strong><span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a>已经讲完了python实现自动扣图的关键代码，那下篇还有啥存在的必要呢？？？
+<img src="https://img-blog.csdnimg.cn/20190724093439716.gif" alt="在这里插入图片描述">
+        答案是否定的。作为一个有理想、有抱负、勇担中华民族复习大任的入门级小白程序员，岂能止步于此。上面我们讲到，用三行代码实现了抠图。但是，我们使用到的是绝对路径，每次进行抠图都需要进行修改，这能忍吗？？？
+        于是想进行一些改进，即运行程序让用户自己选择图片，进行抠除。其实涉及的技术也是很简单，就是python打开文件夹选择文件，用到了win32ui模块。没有该模块的用户可以通过pip install pywin32进行安装，当然前提是配置好了python环境。</p> <div class="language-javascript extra-class"><pre class="language-javascript"><code>from removebg <span class="token keyword">import</span> RemoveBg
+<span class="token keyword">import</span> win32ui
+
+dlg <span class="token operator">=</span> win32ui<span class="token punctuation">.</span><span class="token function">CreateFileDialog</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span>  # <span class="token number">1</span>表示打开文件对话框
+dlg<span class="token punctuation">.</span><span class="token function">SetOFNInitialDir</span><span class="token punctuation">(</span><span class="token string">'E:/图片'</span><span class="token punctuation">)</span>  # 设置打开文件对话框中的初始显示目录
+dlg<span class="token punctuation">.</span><span class="token function">DoModal</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+filename <span class="token operator">=</span> dlg<span class="token punctuation">.</span><span class="token function">GetPathName</span><span class="token punctuation">(</span><span class="token punctuation">)</span>  # 获取选择的文件名称
+
+rmbg <span class="token operator">=</span> <span class="token function">RemoveBg</span><span class="token punctuation">(</span><span class="token string">&quot;kRSbRHJZePGWnEBfKeqFbtSz&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;error.log&quot;</span><span class="token punctuation">)</span> # 引号内是你获取的<span class="token constant">API</span>
+rmbg<span class="token punctuation">.</span><span class="token function">remove_background_from_img_file</span><span class="token punctuation">(</span>filename<span class="token punctuation">)</span> # 图片地址
+</code></pre></div><p>这样简单修改后用户就可以自主选择图片了，值得一提的是remove_background_from_img_file函数已经经过了一些异常处理，所以选择除图片之外的文件不会出现错误。
+<img src="https://img-blog.csdnimg.cn/20190724095507844.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MDg0MDcxNA==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述">
+        仿佛到这里已经差不多了，但还是感觉哪里不对劲。每次进行抠图都需要打开pycharm，然后运行程序？？？这太麻烦了。。。于是乎，想用pyinstaller模块将程序打包为可执行文件。（ps.py为我的脚本名称）</p> <div class="language-javascript extra-class"><pre class="language-javascript"><code>pyinstaller <span class="token operator">-</span><span class="token constant">F</span> <span class="token operator">-</span>w ps<span class="token punctuation">.</span>py 
+</code></pre></div><p>生成的可执行文件位置在项目文件夹中自动生成的dist文件夹里。
+<img src="https://img-blog.csdnimg.cn/201907241006324.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MDg0MDcxNA==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"> <img src="https://img-blog.csdnimg.cn/20190724100910122.png" alt="在这里插入图片描述">
+双击exe文件，正常打开，图片抠除正常，nice！！！
+正当准备收工时，突然想到，一些逼格很高的项目不都是安装程序吗？？？于是，自己也想给这个卑微的项目制作一个安装包。打包软件用的是<a href="http://hmne.sourceforge.net" target="_blank" rel="noopener noreferrer">NIS EDIT<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a>，大家有兴趣可以了解一些，这里推荐一个教程https://blog.csdn.net/signjing/article/details/7855855 ，比较详细。
+<img src="https://img-blog.csdnimg.cn/20190724101857616.png" alt="">
+ps.exe为安装程序，ps.nsi即使利用上面程序生成的脚本文件。下图是安装过程：
+<img src="https://img-blog.csdnimg.cn/20190724101958566.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MDg0MDcxNA==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"> <img src="https://img-blog.csdnimg.cn/20190724102121555.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MDg0MDcxNA==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述">
+ok，安装成功，完美撒花（卑微求点赞）。
+<img src="https://img-blog.csdnimg.cn/20190724102136223.png" alt="在这里插入图片描述">
+最后，把安装程序放在网盘上，大家可自由下载。链接：https://pan.baidu.com/s/1pRKgzDsPE39swKtNNhM3BA
+提取码：gjvi</p></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/Blog/Python实现自动抠图（上篇）.html" class="prev">
+        Python实现自动抠图（上篇）
+      </a></span> <!----></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/assets/js/app.268a872f.js" defer></script><script src="/assets/js/2.bf12f96b.js" defer></script><script src="/assets/js/8.ab950238.js" defer></script>
+  </body>
+</html>
